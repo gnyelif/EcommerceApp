@@ -1,0 +1,50 @@
+﻿@model EcommerceApp.Web.Models.OrderListViewModel
+@{
+    ViewData["Title"] = "Sipariş Listesi";
+}
+<div class="text-center">
+    <h1 class="display-4">Sipariş Listesi</h1>
+    @{
+        List<Order> orderlist = Model.OrderList as List<Order>;
+    }
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Müşteri Sipariş No</th>
+                <th scope="col">Çıkış Adresi</th>
+                <th scope="col">Varış Adresi</th>
+                <th scope="col">Miktar</th>
+                <th scope="col">Miktar Birim</th>
+                <th scope="col">Ağırlık</th>
+                <th scope="col">Ağırlık Birim</th>
+                <th scope="col">Malzeme Kodu</th>
+                <th scope="col">Not</th>
+                <th scope="col">Statü</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderList)
+           {
+               <tr>
+                    <th scope="row"></th>
+                    <td>@item.CustomerOrderId </td>
+                    <td>
+                        @item.SenderAddress
+                    </td>
+                    <td>@item.DestinationAddress</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.QuantityUnit</td>
+                    <td>@item.Weight</td>
+                    <td>@item.WeightUnit</td>
+                    <td>@item.MaterialCode</td>
+                    <td>@item.Not</td>
+                    <td>
+                        @Html.DropDownList("drpOrderStatus", new SelectList(Model.OrderStatus, "StatusId", "StatusName"),"Burası guncellenecek" , new {  id = "drpOrderStatus" , orderId=item.OrderId , statusId=item.StatusId})
+                    
+                    </td>
+                </tr>
+           }
+        </tbody>
+    </table>
+</div>

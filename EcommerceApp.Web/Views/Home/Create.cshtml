@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Sipariş Ekle";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<table style="width:100%" class="tblAddOrder">
+    <tbody>
+        <tr>
+            <td>
+                <div class="form-group">
+                    <label for="customerOrder">Müşteri Sipariş No</label>
+                    <input type="text" class="form-control txtCustomerOrderNo" id="customerOrder" placeholder="Müşteri Sipariş No" maxlength="10">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputAddress1">Çıkış Adresi</label>
+                        <input type="text" class="form-control txtSenderAddress" id="inputAddress1" placeholder="Çıkış Adresi" maxlength="250">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputAddress2">Varış Adresi</label>
+                        <input type="text" class="form-control txtDestinationAddress" id="inputAddress2" placeholder="Varış Adresi" maxlength="250">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputQuantity">Miktar</label>
+                        <input type="number" class="form-control txtQuantity" id="inputQuantity" placeholder="Miktar" maxlength="5">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputQuantityUnit">Miktar Birim</label>
+                        <select id="inputQuantityUnit" class="form-control quantityUnit">
+                            <option selected>Seçiniz</option>
+                            <option>Adet</option>
+                            <option>Koli</option>
+                            <option>Paket</option>
+                            <option>Palet</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputWeight">Ağırlık</label>
+                        <input type="number" class="form-control txtWeight" id="inputWeight" placeholder="Ağırlık" maxlength="5">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputWeightUnit">Ağırlık Birim</label>
+                        <select id="inputWeightUnit" class="form-control weightUnit">
+                            <option selected>Seçiniz</option>
+                            <option>Kg</option>
+                            <option>Ton</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="materialCode">Malzeme Kodu</label>
+                        <input type="text" class="form-control txtMaterialCode" id="materialCode" placeholder="Malzeme Kodu" maxlength="10">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="materialName">Malzeme Adı</label>
+                        <input type="text" class="form-control txtMaterialName" id="materialName" placeholder="Malzeme Adı" maxlength="50">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="not">Not</label>
+                    <input type="text" class="form-control txtNot" id="not" placeholder="Not" maxlength="250">
+                </div>
+                <hr>
+                
+            </td>
+        </tr>
+        
+    </tbody>
+
+</table>
+
+
+
+<button type="button" class="btn btn-secondary btn-lg btn-block btnAddNewRow">+ Yeni Sipariş Satırı Ekle</button>
+<button type="button" class="btn btn-primary btn-lg btn-block btnSaveOrder">Siparişleri Kaydet</button>

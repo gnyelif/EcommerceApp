@@ -21,9 +21,11 @@ namespace EcommerceApp.API.Controllers
             _logger = logger;
         }
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            var values = _context.Order.ToList();
+            return Ok(values);
+            //return new string[] { "value1", "value2" };
         }
 
         [Route("update")]

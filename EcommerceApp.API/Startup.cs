@@ -35,6 +35,7 @@ namespace EcommerceApp.API
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
                 options.EnableSensitiveDataLogging(true);
             });
+            services.AddCors();
            
         }
 
@@ -51,7 +52,8 @@ namespace EcommerceApp.API
 
             app.UseRouting();
 
-            app.UseCors("ReactPolicy");
+           app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+
 
             app.UseAuthorization();
 
